@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/shiva-reddy-1001/Boondoggles/issues"
   },
-  "homepage": "https://github.com/shiva-reddy-1001/Boondoggles#readme"
+  "homepage": "https://github.com/shiva-reddy-1001/Boondoggles#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "nodemon": "^2.0.15"
+  }
 }
