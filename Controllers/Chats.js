@@ -7,7 +7,7 @@ function addNewChat(req,res){
             console.error(err);
             res.status(500).send("Internal server error");
         }else if(chat1){
-            console.log("Chat already exists");
+            res.status(200).send("Chat already exists");
         }else{
             const chat = new Chat({
                 user1:req.body.user1,
@@ -43,4 +43,19 @@ function addMessage(req,res){
         }
     })
 };
-module.exports = { addNewChat, addMessage};
+
+const getMessages = (req,res) => {
+    Chat.findOne({$or:[{user1:req.body.user1,user2:req.body.user2},{user1:req.body.user2,user2:req.body.user1}]},(err,chat)=>{
+        if(err){
+            console.error(err);
+            res.status(500).send("Internal server error");
+        }else if(chat){
+            res.status(200).send(chat.chats);
+        }else{
+            console.log("Chat doesnt exist");
+        }
+    })
+}
+
+
+module.exports = { addNewChat, addMessage , getMessages};

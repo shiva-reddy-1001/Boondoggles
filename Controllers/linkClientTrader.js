@@ -1,18 +1,18 @@
 const {User} = require("../Models/UserModel");
 
 function addLink(req,res) {
-    User.findOne({username: req.body.username1}, (err, user1) => {
+    User.findOne({username: req.body.user1}, (err, user1) => {
         if (err) {
             console.error(err);
             res.status(500).send("Internal server error");
         } else if (user1) {
-            User.findOne({username: req.body.username2},async (err, user2) => {
+            User.findOne({username: req.body.user2},async (err, user2) => {
                 if (err) {
                     console.error(err);
                     res.status(500).send("Internal server error");
                 } else if (user2) {
-                    await User.updateOne({ username: user1.username }, { $addToSet: { linked: req.body.username2 } });
-                    await User.updateOne({ username: user2.username }, { $addToSet: { linked: req.body.username1 } });
+                    await User.updateOne({ username: user1.username }, { $addToSet: { linked: req.body.user2 } });
+                    await User.updateOne({ username: user2.username }, { $addToSet: { linked: req.body.user1 } });
                     res.status(200).send("added")
                 }
             })
@@ -40,7 +40,7 @@ function getAllClients(req,res){
     })
 }
 function getLinks(req,res){
-    User.findOne({username:req.body.username},(err,user)=>{
+    User.findOne({username:req.username},(err,user)=>{
         if (err) {
             console.error(err);
             res.status(500).send("Internal server error");
