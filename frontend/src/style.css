@@ -1,0 +1,71 @@
+body{
+    background-color: #f5f5f5;
+}
+
+.title-map {
+    
+    align-self: center  ;
+    color: #f5f5f5;
+}
+/* .card {
+    background: #fff;
+    transition: .5s;
+    border: 0;
+    margin-bottom: 30px;
+    border-radius: .55rem;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+} */
+
+.chat-app .people-list {
+    /* background-color: #1877f2; */
+    width: 280px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    z-index: 7
+}
+
+
+.message{
+    display: flex;
+    flex:column;
+    margin-top: 20px;
+}
+
+.msgText{
+    padding:10px;
+    border-radius:20px ;
+    background-color: #1877f2;
+}
+
+
+.chat-home {
+    display: flex;
+    flex-direction: row;
+    /* justify-items: space-around; */
+    align-items: center;
+}
+
+.chat-input{
+    display: flex;
+}
+ .message-input{ 
+     width: 70% !important
+     ;
+}
+
+.restrict-box {
+    margin-bottom:2rem;
+    padding-left: 5%;
+    padding-top: 5%;
+    background-color: white;
+    width: 1000px;
+    height: 600px;
+    margin-left: 2rem;
+}
+.selecting{
+    margin-left: 40rem;
+}
